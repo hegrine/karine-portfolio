@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Карине Григорян - Портфолио</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0d4a4f; --teal-deep:#08363a; --gold:#d9a62e; --gold-soft:#f0dca0;
+  --crimson:#a8203b; --turq:#2aa8a8; --cream:#fbf8f1; --ink:#1d2b2d; --muted:#5d6f70;
+  --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:20px;
+  padding:16px clamp(20px,5vw,56px);background:rgba(8,54,58,.82);backdrop-filter:blur(10px);color:#fff}
+nav .brand{font-family:var(--serif);font-weight:600;font-size:1.15rem;letter-spacing:.02em;text-decoration:none;white-space:nowrap}
+nav ul{display:flex;gap:clamp(12px,2vw,26px);list-style:none;margin-left:auto}
+nav ul a{font-size:.88rem;text-decoration:none;opacity:.85;transition:.2s;letter-spacing:.02em;white-space:nowrap}
+nav ul a:hover{opacity:1;color:var(--gold-soft)}
+nav .langs{display:flex;gap:2px;padding:3px;border:1.5px solid rgba(240,220,160,.45);border-radius:999px;flex:none}
+nav .langs a{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-decoration:none;padding:5px 11px;border-radius:999px;color:var(--gold-soft);transition:.2s}
+nav .langs a:hover{background:rgba(240,220,160,.18)}
+nav .langs a.active{background:var(--gold);color:var(--teal-deep);pointer-events:none}
+@media(max-width:980px){nav ul{display:none}nav .langs{margin-left:auto}}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;background:
+  radial-gradient(circle at 85% 20%,rgba(42,168,168,.28),transparent 45%),
+  radial-gradient(circle at 10% 90%,rgba(168,32,59,.25),transparent 40%),
+  linear-gradient(135deg,var(--teal-deep),var(--teal));
+  color:#fff;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:clamp(24px,5vw,72px);
+  padding:120px clamp(24px,7vw,110px) 80px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;opacity:.06;
+  background-image:radial-gradient(var(--gold) 1.5px,transparent 1.5px);background-size:28px 28px}
+.hero > *{position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;color:var(--gold);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.eyebrow::before{content:"";width:42px;height:2px;background:var(--gold);flex:none}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.8rem,7.4vw,6rem);line-height:1.02;margin:22px 0 22px;letter-spacing:-.01em}
+.hero h1 em{display:block;font-style:italic;font-weight:400;color:var(--gold-soft)}
+.hero p.lead{max-width:34em;font-size:1.1rem;color:rgba(255,255,255,.82)}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
+.btn{display:inline-block;padding:14px 28px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.95rem;transition:.25s}
+.btn.primary{background:var(--gold);color:var(--teal-deep)}
+.btn.primary:hover{background:#fff;transform:translateY(-2px)}
+.btn.ghost{border:1.5px solid rgba(255,255,255,.5);color:#fff}
+.btn.ghost:hover{border-color:var(--gold);color:var(--gold)}
+.portrait{justify-self:center;position:relative;width:min(100%,460px)}
+.portrait .frame{position:relative;border-radius:240px 240px 24px 24px;overflow:hidden;aspect-ratio:4/5;
+  border:6px solid var(--gold);box-shadow:0 30px 70px rgba(0,0,0,.4);background:var(--teal-deep)}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.portrait::after{content:"";position:absolute;right:-18px;bottom:-18px;width:100%;height:100%;border:2px solid var(--turq);
+  border-radius:240px 240px 24px 24px;z-index:-1}
+.portrait .tag{position:absolute;left:-26px;bottom:42px;background:var(--crimson);color:#fff;padding:12px 20px;border-radius:14px;
+  font-family:var(--serif);font-style:italic;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:110px}.portrait{order:-1;width:min(78%,340px)}.portrait .tag{left:-8px}}
+
+/* BEAD DIVIDER */
+.beads{display:flex;justify-content:center;gap:10px;padding:26px 0;background:var(--cream)}
+.beads i{width:14px;height:14px;border-radius:50%;display:block;box-shadow:inset -3px -3px 5px rgba(0,0,0,.2)}
+.beads i:nth-child(4n+1){background:var(--crimson)}
+.beads i:nth-child(4n+2){background:var(--gold)}
+.beads i:nth-child(4n+3){background:var(--turq)}
+.beads i:nth-child(4n){background:var(--teal)}
+
+/* SECTIONS */
+section{padding:clamp(64px,9vw,120px) clamp(20px,6vw,90px)}
+.wrap{max-width:1240px;margin:auto}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:10px 34px;align-items:end;margin-bottom:46px}
+.sec-head .num{font-family:var(--serif);font-size:clamp(3.5rem,8vw,6rem);line-height:.8;color:var(--gold);opacity:.8;font-weight:400}
+.sec-head h2{font-family:var(--serif);font-size:clamp(1.9rem,4.4vw,3.2rem);color:var(--teal);line-height:1.1;font-weight:600}
+.sec-head p{grid-column:2;color:var(--muted);max-width:44em}
+.sec-head h2::after{content:"";display:block;width:70px;height:4px;background:var(--gold);margin-top:14px;border-radius:2px}
+
+/* ABOUT */
+#about{background:#fff}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:start}
+.about h2{font-family:var(--serif);font-size:clamp(1.9rem,3.8vw,2.8rem);color:var(--teal);line-height:1.15}
+.about p{color:var(--muted);margin-top:18px;font-size:1.05rem}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fact{padding:26px;border-radius:20px;background:var(--cream);border:1px solid #eadfc4}
+.fact b{display:block;font-family:var(--serif);font-size:2.4rem;color:var(--crimson);line-height:1}
+.fact span{font-size:.9rem;color:var(--muted)}
+@media(max-width:800px){.about{grid-template-columns:1fr}}
+
+/* GALLERY (masonry) */
+.gallery{columns:3 280px;column-gap:18px}
+.gallery figure{break-inside:avoid;margin-bottom:18px;border-radius:16px;overflow:hidden;position:relative;cursor:zoom-in;
+  background:#e9e2d0;box-shadow:0 6px 22px rgba(13,74,79,.12);opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s,box-shadow .3s}
+.gallery figure.in{opacity:1;transform:none}
+.gallery figure:hover{box-shadow:0 16px 40px rgba(13,74,79,.25)}
+.gallery img{width:100%;height:auto;transition:transform .7s}
+.gallery figure:hover img{transform:scale(1.05)}
+.gallery figure::after{content:"+";position:absolute;right:12px;bottom:12px;width:36px;height:36px;border-radius:50%;
+  background:var(--gold);color:var(--teal-deep);display:grid;place-items:center;font-size:1.3rem;font-weight:600;
+  opacity:0;transform:scale(.6);transition:.3s}
+.gallery figure:hover::after{opacity:1;transform:none}
+
+.alt-bg{background:linear-gradient(180deg,#fff,#f6efdc)}
+.dark{background:linear-gradient(135deg,var(--teal-deep),var(--teal));color:#fff}
+.dark .sec-head h2{color:#fff}
+.dark .sec-head p{color:rgba(255,255,255,.75)}
+
+/* CONTACT */
+#contact{background:var(--teal-deep);color:#fff;text-align:center}
+#contact h2{font-family:var(--serif);font-size:clamp(2rem,4.6vw,3.4rem);margin-bottom:12px}
+#contact h2 em{color:var(--gold-soft)}
+#contact p{color:rgba(255,255,255,.75);max-width:34em;margin:0 auto 36px}
+.contacts{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.contacts a,.contacts .loc{padding:14px 26px;border-radius:999px;border:1.5px solid rgba(240,220,160,.5);text-decoration:none;transition:.25s}
+.contacts .loc{opacity:.85;border-color:rgba(240,220,160,.28)}
+.contacts a:hover{background:var(--gold);color:var(--teal-deep);border-color:var(--gold)}
+footer{background:#052a2d;color:rgba(255,255,255,.5);text-align:center;padding:22px;font-size:.82rem}
+
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;background:rgba(5,30,33,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:30px}
+.lb.open{display:flex}
+.lb img{max-height:88vh;max-width:92vw;border-radius:10px;box-shadow:0 20px 80px rgba(0,0,0,.6)}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:52px;height:52px;border-radius:50%;font-size:1.6rem;cursor:pointer;transition:.2s}
+.lb button:hover{background:var(--gold);color:var(--teal-deep)}
+.lb .x{top:22px;right:22px}
+.lb .p,.lb .n{top:50%;transform:translateY(-50%)}
+.lb .p{left:22px}.lb .n{right:22px}
+.lb .count{position:absolute;bottom:20px;color:#fff;opacity:.7;font-size:.9rem}
+
+/* PRINT / PDF */
+@media print{
+  nav,.lb,.cta,.beads{display:none}
+  body{background:#fff}
+  section{padding:30px 20px;break-inside:auto}
+  .hero{min-height:auto;padding:40px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .dark,#contact,.fact{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .gallery figure{opacity:1!important;transform:none!important;box-shadow:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="#top">Карине Григорян</a>
+  <ul>
+    <li><a href="#about">О мастере</a></li>
+    <li><a href="#faberzhe">Яйца Фаберже</a></li>
+    <li><a href="#jewellery">Украшения</a></li>
+    <li><a href="#newyear">Новый год</a></li>
+    <li><a href="#flowers">Цветы</a></li>
+    <li><a href="#ceramics">Керамика</a></li>
+    <li><a href="#contact">Контакты</a></li>
+  </ul>
+  <div class="langs">
+    <a href="index.html" hreflang="en">EN</a>
+    <a class="active" href="portfolio-ru.html" hreflang="ru" aria-current="true">RU</a>
+    <a href="portfolio-hy.html" hreflang="hy">ՀԱՅ</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <span class="eyebrow">Портфолио · Бисер и керамика</span>
+    <h1>Карине <em>Григорян</em></h1>
+    <p class="lead">Преподаватель рукоделия и мастер. Тринадцать лет творческой работы в бисероплетении и керамике, где традиционные техники соединяются с современным стилем. Каждое изделие создано вручную: от выбора материалов до финальной отделки.</p>
+    <div class="cta">
+      <a class="btn primary" href="#faberzhe">Смотреть работы</a>
+      <a class="btn ghost" href="#contact">Связаться</a>
+    </div>
+  </div>
+  <div class="portrait">
+    <div class="frame"><img src="Artisan with a Beaded Peacock.png" alt="Карине с бисерным павлином" onerror="this.style.display='none'"></div>
+    <div class="tag">вручную, бусина за бусиной</div>
+  </div>
+</header>
+
+<div class="beads"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <span class="eyebrow" style="color:var(--crimson)">О мастере</span>
+      <h2 style="margin-top:16px">Терпение, точность и любовь к деталям</h2>
+      <p>Карине создаёт изделия из бисера и керамики вручную: яйца в стиле Фаберже, украшения, новогодние игрушки и цветы из бумаги и бисера.</p>
+      <p>Восемь лет она вела детские мастерские, выстраивая пошаговые уроки, которые развивают мелкую моторику и уверенность в себе. Прежняя карьера в клинических лабораториях и в сфере контроля качества пищевого производства привила ей строгий подход к безопасности, аккуратность и внимание к деталям, что чувствуется в каждой работе.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><b>13</b><span>лет творческой работы с бисером и керамикой</span></div>
+      <div class="fact"><b>8</b><span>лет руководства детскими мастерскими</span></div>
+      <div class="fact"><b>5</b><span>коллекций в этом портфолио</span></div>
+      <div class="fact"><b>100%</b><span>ручная работа на каждом этапе</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="faberzhe" class="alt-bg">
+  <div class="wrap">
+    <div class="sec-head"><div class="num">01</div><h2>Яйца Фаберже</h2>
+      <p>Нарядные декоративные яйца в традициях Фаберже, украшенные бисером и тонкими деталями.</p></div>
+    <div class="gallery" data-folder="faberzhe" data-count="6"></div>
+  </div>
+</section>
+
+<section id="jewellery" class="dark">
+  <div class="wrap">
+    <div class="sec-head"><div class="num">02</div><h2>Украшения</h2>
+      <p>Колье, серьги и аксессуары, созданные и собранные вручную.</p></div>
+    <div class="gallery" data-folder="jewellery" data-count="21"></div>
+  </div>
+</section>
+
+<section id="newyear">
+  <div class="wrap">
+    <div class="sec-head"><div class="num">03</div><h2>Новогодние украшения</h2>
+      <p>Праздничные игрушки, которые украсят зимние дни. Каждая из них неповторима.</p></div>
+    <div class="gallery" data-folder="new year" data-count="12"></div>
+  </div>
+</section>
+
+<section id="flowers" class="alt-bg">
+  <div class="wrap">
+    <div class="sec-head"><div class="num">04</div><h2>Цветы из бумаги и бисера</h2>
+      <p>Цветы из бумаги и бисера, которые никогда не увянут.</p></div>
+    <div class="gallery" data-folder="paper and bead flowers" data-count="7"></div>
+  </div>
+</section>
+
+<section id="ceramics" class="dark">
+  <div class="wrap">
+    <div class="sec-head"><div class="num">05</div><h2>Керамика</h2>
+      <p>Изделия из глины, вылепленные вручную и бережно обработанные.</p></div>
+    <div class="gallery" data-folder="ceramics" data-count="8"></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Давайте <em>творить</em> вместе</h2>
+    <p>Для заказов, мастер-классов и сотрудничества свяжитесь со мной.</p>
+  </div>
+</section>
+<footer>© Карине Григорян · Ереван, Армения</footer>
+
+<div class="lb" id="lb" aria-hidden="true">
+  <button class="x" aria-label="Закрыть">×</button>
+  <button class="p" aria-label="Назад">‹</button>
+  <img id="lbImg" alt="">
+  <button class="n" aria-label="Вперёд">›</button>
+  <div class="count" id="lbCount"></div>
+</div>
+
+<script>
+(function(){
+  var sets = {};           // folder -> [{src, alt}, ...]
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.08}) : null;
+
+  document.querySelectorAll('.gallery').forEach(function(g){
+    var folder = g.dataset.folder, n = +g.dataset.count, list = sets[folder] = [];
+    var heading = g.previousElementSibling && g.previousElementSibling.querySelector('h2');
+    var label = heading ? heading.textContent.trim() : folder;
+    for(var i=1;i<=n;i++){
+      var src = encodeURI(folder + '/' + i + '.jpeg');
+      var alt = label + ' ' + i;
+      var fig = document.createElement('figure');
+      var img = new Image();
+      img.loading = 'lazy'; img.alt = alt; img.src = src;
+      img.onerror = (function(f, s){
+        return function(){
+          if(this.parentNode) this.parentNode.remove();
+          var arr = sets[f];
+          for(var j=0;j<arr.length;j++){
+            if(arr[j].src === s){ arr.splice(j, 1); break; }
+          }
+        };
+      })(folder, src);
+      fig.appendChild(img);
+      (function(f, s){ fig.addEventListener('click', function(){ open(f, s); }); })(folder, src);
+      g.appendChild(fig);
+      list.push({src: src, alt: alt});
+      if(io) io.observe(fig); else fig.classList.add('in');
+    }
+  });
+
+  window.addEventListener('beforeprint', function(){
+    document.querySelectorAll('.gallery img').forEach(function(img){ img.loading = 'eager'; });
+  });
+
+  var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCount = document.getElementById('lbCount');
+  var cur = {folder:null, idx:0};
+  function show(){
+    var l = sets[cur.folder];
+    if(!l || !l.length) return;
+    lbImg.src = l[cur.idx].src;
+    lbImg.alt = l[cur.idx].alt;
+    lbCount.textContent = (cur.idx+1) + ' / ' + l.length;
+  }
+  function open(folder, src){
+    var l = sets[folder] || [];
+    var idx = -1;
+    for(var j=0;j<l.length;j++){ if(l[j].src === src){ idx = j; break; } }
+    if(idx === -1) return;
+    cur.folder = folder; cur.idx = idx; show();
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+  }
+  function close(){
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+  }
+  function step(d){
+    var l = sets[cur.folder];
+    if(!l || !l.length) return;
+    cur.idx = (cur.idx + d + l.length) % l.length; show();
+  }
+  lb.querySelector('.x').onclick = close;
+  lb.querySelector('.p').onclick = function(e){ e.stopPropagation(); step(-1); };
+  lb.querySelector('.n').onclick = function(e){ e.stopPropagation(); step(1); };
+  lb.addEventListener('click', function(e){ if(e.target === lb) close(); });
+  document.addEventListener('keydown', function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') close();
+    if(e.key === 'ArrowLeft') step(-1);
+    if(e.key === 'ArrowRight') step(1);
+  });
+})();
+</script>
+</body>
+</html>
